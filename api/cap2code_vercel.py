@@ -29,6 +29,8 @@ def cap_namer(value_str):
 def task_func():
     set_env(title="CAP Code Calculation")
 
+    put_markdown('本页面可以将电阻值批量转换为订购时的三位代码。')
+    
     values = textarea('输入电容值：', rows=15, placeholder='一行一个')
 
     codes = ''

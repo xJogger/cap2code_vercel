@@ -12,6 +12,8 @@ def cap_namer(value_str):
     value_str = value_str.lower()
     if 'u' in value_str:
         base = 1000000
+    elif 'nc' in value_str:
+        return 'NC'
     elif 'n' in value_str:
         base = 1000
     elif 'p' in value_str:

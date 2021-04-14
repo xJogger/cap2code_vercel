@@ -45,12 +45,6 @@ def task_func():
 # Flask+WebIO框架
 app = Flask(__name__)
 
-# task_func 为使用PyWebIO编写的任务函数
-app.add_url_rule('/io', 'webio_view', webio_view(task_func),
-            methods=['GET', 'POST', 'OPTIONS'])  # 接口需要能接收GET、POST和OPTIONS请求
-
-@app.route('/')
-@app.route('/<path:static_file>')
-def serve_static_file(static_file='index.html'):
-    """前端静态文件托管"""
-    return send_from_directory(STATIC_PATH, static_file)
+# `task_func` is PyWebIO task function
+app.add_url_rule('/', 'webio_view', webio_view(task_func),
+            methods=['GET', 'POST', 'OPTIONS'])  # need GET,POST and OPTIONS methods
